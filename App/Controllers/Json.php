@@ -18,8 +18,6 @@ class Json extends Action {
 
     public function index()
     {
-        
-     
     	//echo $this->imo("123");
     	//echo $this->getImovel();
 
@@ -29,67 +27,67 @@ class Json extends Action {
 			$bingo = null;
 
 			switch ($bingo) {
-				//pega todos os cursos
+				
+                // seleciona usuario por id
 			case 'user':
 			echo $this->user($_GET['id']);
 			break;
+                // seleciona imovel por id
 			case 'imo':
 			echo $this->getImovel($_GET['id']);
 			break;
 			case 'me':
+                // seleciona todos os imoveis de um determinado corretor
 			echo $this->fetchImovel($_GET['id']);
-			//echo "me";
 			break;
+                // salvar usuario
 			case 'saveme':
 			echo $this->salvarUsuario($_GET['me']);
-			//echo "me";
 			break;
+                // seleciona todas as fotos de um determinado imovel
 			case 'pics':
 			echo $this->fetchFotos($_GET['id']);
-			//echo "me";
 			break;
+                //  seleciona profile de um determinado usuario pelo plusid
 			case 'profile':
 			echo $this->getProfile($_GET['id']);
-			//echo "me";
 			break;
+                // seleciona favoritos de um determinado usuario
 			case 'fav':
 			echo $this->getMyFav($_GET['id']);
-			//echo "me";
 			break;
+                // seleciona as interações de um determinado corretor com todos os usuarios
 			case 'int':
 			echo $this->getMyInts($_GET['id']);
-			//echo "me";
 			break;
+                // salva perfil do cliente ou corretor, distinto pelo tipo
             case 'saveprofile':
             echo $this->saveProfile($_GET['user']);
-            //echo "me";
             break;
+                // salva imovel
             case 'saveimo':
             echo $this->saveImovel($imo);
-            //echo "me";
             break;
+                // salva iteracao com o cliente
             case 'saveit':
             echo $this->saveIteracao();
-            //echo "me";
             break;
+                // seleciona interacao com um determinado cliente
 			case 'intu':
 			echo $this->getIntsUser($_GET['id']);
-			//echo "me";
 			break;
+                // salva relacionamento dos clientes com os corretores para montar lista de interações
             case 'saveRel':
             echo $this->saveRelacionamento();
-            //echo "me";
             break;
+                // salvar favoritos de um cliente
             case 'saveFav':
             echo $this->saveFavorito();
-            //echo "me";
             break;
+                // salvar longitude e latitude
             case 'longlat':
             echo $this->getLongLat($_GET['endereco']);
-            //echo "me";
             break;
-				//quem se increveu mas não necessariamente foi
-			case 'getInscritos':
 			default:
 			echo "[nothing to you here]";
 			break;

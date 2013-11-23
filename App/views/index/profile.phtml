@@ -1,7 +1,7 @@
 <?php 
-$url = "http://trekoapp.appspot.com/json?choice=user&id=".$_GET['id'];
-$ar  = file_get_contents($url);
-$user = json_decode($ar, TRUE);
+	$url = "http://trekoapp.appspot.com/json?choice=user&id=".$_GET['id'];
+	$ar  = file_get_contents($url);
+	$user = json_decode($ar, TRUE);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -259,8 +259,6 @@ function setMarkers(map, locations) {
 							<header>
 								<h2>Sobre mim</h2>
 							</header>
-
-							<a href="http://ineedchemicalx.deviantart.com/art/Pasadena-357650036" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
 							
 							<p>Começou a atuar como corretor em 2000 e já participou de grandes lançamentos, tem grande experiéncia com apartamentos, imóveis para familias, procura sempre visar o melhor negocio para seu conforto e comodidade, grande experência em reigiõs como Zona Sul, Norte e Centro.
 
