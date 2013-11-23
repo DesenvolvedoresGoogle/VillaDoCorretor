@@ -17,13 +17,26 @@ REST É VIDA!
 
 Para facilitar a interação cross plataforma todo o sistema está utilizando REST, tanto para salvar quanto para resgatar informações.
 
-A principal estrutura de REST é http://trekoapp.appspot.com/json?
-
+A principal estrutura de REST é http://<sua url>/json?
 
 choice = "nome das funcoes";
 
 outros parametros = 'id' 'me' 'user';
 
+exemplo: http://trekoapp.appspot.com/json?choice=user&id=106003374795503086342
+
+{
+id: "3",
+name: "Thiago Masano Cavaloti",
+plusid: "106003374795503086342",
+plusurl: "https://plus.google.com/106003374795503086342",
+email: "thiagocavaloti@gmail.com",
+device: "",
+confirmed: "",
+imagem: "https://lh4.googleusercontent.com/-R8FNYkIiKIw/AAAAAAAAAAI/AAAAAAAAAjQ/mx4AsLDrmvM/photo.jpg?sz=50",
+}
+
+retornara um json:
 
 next sprint:
 
