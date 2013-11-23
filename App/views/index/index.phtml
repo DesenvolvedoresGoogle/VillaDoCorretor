@@ -72,26 +72,29 @@
 		.item-negocio{
 			background-image: url('images/item-negocio.png');
 		}
-		.participe {display: block;margin:0 auto;width:200px;font-family: 'Source Sans Pro', sans-serif;font-size:32px;color:#fff;text-align: center;clear: both;background-color: #ff9933;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}
+		.participe {display: block;margin:0 auto;width:200px;font-family: 'Source Sans Pro', sans-serif;font-size:32px;color:#fff;text-align: center;clear: both;background-color: #ff9933;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;margin-top: 160px;}
 		.participe p {padding: 10px;}
 		.participe span.small {display:block;margin-top: -4px;font-size: 14px;}
 		.footer-home{
 			position: relative;
 			background-color: #323030;
-			margin: 0 auto;
+			margin-top: 80px;
 			padding: 0px;
 			height:45px;
 			width:100%;
 		}
 		.footer-wrap  {width:50%;display:block;margin: 0 auto;text-align:center;}
 		.footer-item {color:#fff;font-family: 'Source Sans Pro', sans-serif;font-size:14px;float: left;}
-		a.footer-item  {margin-left:5px;text-decoration: none;}
+		p.footer-item {margin-top:5px;margin-right: 10px;}
+		a.footer-item  {margin-left:5px;text-decoration: none;margin-top:10px;}
 		.align-top {}
 		.divider 	  {height:40px;width:2px;background-color:#666;}
 		#signinButton {vertical-align: bottom;}
 		div#___signin_0 {
 		margin-top:4px; 
 		}
+		img {max-width: 100%;}
+
 		</style>
 				<!-- Place this asynchronous JavaScript just before your </body> tag -->
 				    <script type="text/javascript">
@@ -117,12 +120,14 @@
 								  var url = "http://trekoapp.appspot.com/json";
 								  $.get(url, {choice: "user",  id: resp.id}, function(data){
 									  console.log(data.name);
-									  console.log(data.id);
-									  if(data.id == ''){
-									  	var params = {name: resp.displayName, plusid: resp.id, email: resp.urls.label};
+									  console.log(data.plusid);
+									  console.log('imagem:' + resp.image.url);
+									  if(data.plusid != resp.id){
+									  	var params = {nome: resp.displayName, plusid: resp.id, email: resp.emails[0].value, plusurl: resp.url, imagem: resp.image.url, token: authResult['access_token']};
 									  	console.log(params);
 									  	$.get(url, {choice: 'saveme',  me: params})
 									  }
+									  window.location.href = "/p?id="+resp.id;
 								  });
 							 });
 					});
@@ -180,7 +185,7 @@
 				    data-clientid="524940015622-ibd7s8381chd4ha7alofb6roiinfgqt9.apps.googleusercontent.com"
 				    data-cookiepolicy="single_host_origin"
 				    data-requestvisibleactions="http://schemas.google.com/AddActivity"
-				    data-scope="https://www.googleapis.com/auth/plus.login">
+				    data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email">
 				  </span>
 				</span>
 				

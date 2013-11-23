@@ -127,10 +127,12 @@ class Json extends Action {
 		$email = $user['email'];
 		$device = $user['device'];
 		$confirmed = $user['confirmado'];
+        $image  = $user['imagem'];
+        $token = $user['token'];
 
 		$this->conectaBanco();
 
-		return	$query = mysql_query("INSERT INTO user (name, plusid, plusurl, email, device, confirmed) values ('$name', '$plusid', '$plusurl', '$email', '$device', '$confirmed')") or die(mysql_error());
+		return	$query = mysql_query("INSERT INTO user (name, plusid, plusurl, email, device, confirmed, imagem, token) values ('$name', '$plusid', '$plusurl', '$email', '$device', '$confirmed', '$image', '$token')") or die(mysql_error());
 
     }
 
