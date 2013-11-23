@@ -19,7 +19,18 @@ Para facilitar a interação cross plataforma todo o sistema está utilizando RE
 
 A principal estrutura de REST é http://trekoapp.appspot.com/json?
 
-choice = <nome das funcoes>;
 
-outros parametros = 'id' 'me' 'user'
+choice = "nome das funcoes";
+
+outros parametros = 'id' 'me' 'user';
+
+
+next sprint:
+
+integracao ao calendar;
+integracao ao google drive; // pq nao usar google store? $$$ como a quantidade de imagens nao sera enorme podemos explorar os 15GB doados pela Google =P
+
+obs.: para consumir todas as funcionalidades crie uma conta cloud.google.com
+
+Make with love and coffe.
 
